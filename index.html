@@ -3,25 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cute Dogs</title>
+    <title>Best Picture</title>
     <style>
-        .image-container {
-            display: flex;
-            justify-content: space-around;
-            margin: 20px;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        button {
-            padding: 10px;
-            font-size: 16px;
-            background-color: #0074D9;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+        /* Add your custom CSS styles here */
     </style>
 </head>
 <body>
@@ -37,10 +21,30 @@
         </div>
     </div>
 
+    <!-- Display poll results here -->
+    <div id="poll-results">
+        <!-- Results will be updated dynamically -->
+    </div>
+
     <script>
+        // Initialize vote counts
+        let votes = {
+            image1: 0,
+            image2: 0
+        };
+
         function vote(imageId) {
-            // Implement your voting logic here (e.g., send data to a server).
-            console.log(`User voted for ${imageId}`);
+            // Update vote count
+            votes[imageId]++;
+            displayResults();
+        }
+
+        function displayResults() {
+            const resultContainer = document.getElementById('poll-results');
+            resultContainer.innerHTML = `
+                <p>Image 1: ${votes.image1} votes</p>
+                <p>Image 2: ${votes.image2} votes</p>
+            `;
         }
     </script>
 </body>
