@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Voting</title>
+    <style>
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #0074D9;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vote for Your Favorite Image</h1>
+    <div class="image-container">
+        <div>
+            <img src="image1.jpg" alt="Image 1">
+            <button onclick="vote('image1')">Vote for Image 1</button>
+        </div>
+        <div>
+            <img src="image2.jpg" alt="Image 2">
+            <button onclick="vote('image2')">Vote for Image 2</button>
+        </div>
+    </div>
+
+    <script>
+        function vote(imageId) {
+            // Implement your voting logic here (e.g., send data to a server).
+            console.log(`User voted for ${imageId}`);
+        }
+    </script>
+</body>
+</html>
